@@ -1,16 +1,18 @@
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  noCursor();
 }
 
 function draw() {
-  // background(0, 100, 200);
+  background(0, 100, 200);
+  ellipse(mouseX, mouseY, 25, 25);
+
 }
 function mouseMoved() {
   socket.emit('mouseMoveEvent', { x: mouseX, y:mouseY });
 
-  ellipse(mouseX, mouseY, 5, 5);
 
-  return false;
+  // return false;
 }
 
 function windowResized() {
