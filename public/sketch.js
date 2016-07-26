@@ -3,16 +3,19 @@ function setup() {
   noCursor();
 }
 
+var od;
+
+
+
 function draw() {
-  background(0, 100, 200);
+  background(100);
+
   ellipse(mouseX, mouseY, 25, 25);
 
 }
+
 function mouseMoved() {
-  socket.emit('mouseMoveEvent', { x: mouseX, y:mouseY });
-
-
-  // return false;
+  socket.emit('inputData', { x: mouseX, y:mouseY });
 }
 
 function windowResized() {
