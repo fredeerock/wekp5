@@ -54,8 +54,6 @@ io.on('connection', function (socket) {
 
   /// RECEIVE OSC ///
 
-  // var oscmsg;
-
   var sock = dgram.createSocket("udp4", function(msg, rinfo) {
     try {
       var oscmsg = osc.fromBuffer(msg);
